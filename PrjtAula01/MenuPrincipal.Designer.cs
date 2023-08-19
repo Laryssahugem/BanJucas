@@ -43,6 +43,7 @@
             lblSaldoVal = new Label();
             lblExtrato = new Label();
             lblOperacoes = new Label();
+            listBox1 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -204,12 +205,22 @@
             lblOperacoes.TabIndex = 13;
             lblOperacoes.Text = "Operações:";
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(86, 182);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(406, 304);
+            listBox1.TabIndex = 14;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1217, 638);
+            Controls.Add(listBox1);
             Controls.Add(lblOperacoes);
             Controls.Add(lblExtrato);
             Controls.Add(lblSaldoVal);
@@ -248,5 +259,6 @@
         private Label lblSaldoVal;
         private Label lblExtrato;
         private Label lblOperacoes;
+        private ListBox listBox1;
     }
 }

@@ -35,7 +35,6 @@
             txtIdentificacao = new TextBox();
             txtNomeDestino = new TextBox();
             txtNumConta = new TextBox();
-            txtAgencia = new TextBox();
             pictureBox1 = new PictureBox();
             txtValorDeposito = new TextBox();
             lblValorDeposito = new Label();
@@ -82,7 +81,7 @@
             // 
             txtIdentificacao.BackColor = Color.White;
             txtIdentificacao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtIdentificacao.Location = new Point(78, 434);
+            txtIdentificacao.Location = new Point(78, 377);
             txtIdentificacao.Name = "txtIdentificacao";
             txtIdentificacao.PlaceholderText = "Quem está depositando?";
             txtIdentificacao.Size = new Size(300, 29);
@@ -93,7 +92,7 @@
             // 
             txtNomeDestino.BackColor = Color.White;
             txtNomeDestino.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNomeDestino.Location = new Point(78, 361);
+            txtNomeDestino.Location = new Point(78, 299);
             txtNomeDestino.Name = "txtNomeDestino";
             txtNomeDestino.PlaceholderText = "Nome do beneficiário";
             txtNomeDestino.Size = new Size(300, 29);
@@ -104,23 +103,12 @@
             // 
             txtNumConta.BackColor = Color.White;
             txtNumConta.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumConta.Location = new Point(78, 288);
+            txtNumConta.Location = new Point(78, 229);
             txtNumConta.Name = "txtNumConta";
             txtNumConta.PlaceholderText = "Número da conta destino";
             txtNumConta.Size = new Size(300, 29);
             txtNumConta.TabIndex = 2;
             txtNumConta.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtAgencia
-            // 
-            txtAgencia.BackColor = Color.White;
-            txtAgencia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAgencia.Location = new Point(78, 216);
-            txtAgencia.Name = "txtAgencia";
-            txtAgencia.PlaceholderText = "Digite a agência de destino";
-            txtAgencia.Size = new Size(300, 29);
-            txtAgencia.TabIndex = 1;
-            txtAgencia.TextAlign = HorizontalAlignment.Center;
             // 
             // pictureBox1
             // 
@@ -203,7 +191,6 @@
             Controls.Add(txtIdentificacao);
             Controls.Add(txtNomeDestino);
             Controls.Add(txtNumConta);
-            Controls.Add(txtAgencia);
             Controls.Add(lblSaldoVal);
             Controls.Add(lblSaldo);
             Controls.Add(lblDeposito);
@@ -223,7 +210,6 @@
         private TextBox txtIdentificacao;
         private TextBox txtNomeDestino;
         private TextBox txtNumConta;
-        private TextBox txtAgencia;
         private PictureBox pictureBox1;
         private TextBox txtValorDeposito;
         private Label lblValorDeposito;

@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace PrjtAula01
 {
-    public partial class TelaPagamento : Form
+    public partial class TelaAgendamento : Form
     {
-        public TelaPagamento()
+        public TelaAgendamento()
         {
             InitializeComponent();
         }
 
-        private void btConfirmarTransf_Click(object sender, EventArgs e)
+        private void txtValorTransf_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIdentificacao_TextChanged(object sender, EventArgs e)
+        private void lblVoltarTransf_Click(object sender, EventArgs e)
         {
 
         }
