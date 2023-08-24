@@ -74,11 +74,11 @@ namespace PrjtAula01
             // instanciei a classe / criei o objeto
             TelaLoginPrincipal TelaLoginPrin = new TelaLoginPrincipal();
 
-            //usando metodo show
-            TelaLoginPrin.Show();
-
             //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
             TelaLoginPrin.MdiParent = this;
+
+            //usando metodo show
+            TelaLoginPrin.Show();
         }
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
