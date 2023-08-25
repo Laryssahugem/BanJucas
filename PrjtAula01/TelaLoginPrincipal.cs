@@ -15,37 +15,81 @@ namespace PrjtAula01
 
         private void BotaoEntrar_Click(object sender, EventArgs e)
         {
-          
 
-            //Criando uma conexão
+            try
+            {
+                //Criando uma conexão
 
-            SqlConnection conexao =
+                SqlConnection conexao =
 
-            new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
+                new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
 
-            SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
+                SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
 
- 
 
-            //Criando um comando
 
-            SqlCommand cmd = new SqlCommand();
+                //Criando um comando
 
- 
+                SqlCommand cmd = new SqlCommand();
 
-            //criando texto do comando, tipo e conexão que será usada
 
-            cmd.CommandText = "psValidacaoLogin";
 
-            cmd.CommandType = CommandType.StoredProcedure;
+                //criando texto do comando, tipo e conexão que será usada
 
-            cmd.Connection = conexao;
+                cmd.CommandText = "psValidacaoLogin";
 
-            //passando os parâmetros necessários
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("cpf", caixaLogin.Text);
-            cmd.Parameters.AddWithValue("senha", senhaLogin.Text);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Connection = conexao;
+
+                //passando os parâmetros necessários
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("cpf", caixaLogin.Text);
+                cmd.Parameters.AddWithValue("senha", senhaLogin.Text);
+
+                conexao.Open(); // Abrindo a conexão
+
+                leitor = cmd.ExecuteReader();
+                // igualando o leitor ao resultado trazido do BD
+
+                if (leitor.HasRows) // se o leitor encontra linhas de dados
+                {
+                    leitor.Read();
+                    //UtiUI.LimpaForm(this);
+                    MessageBox.Show("Bem Vindo!");
+                    UsuarioLogado.Id = leitor.GetInt32(0);
+                    UsuarioLogado.NomeCorrentista = leitor.GetString(1);
+                    UsuarioLogado.DataNascimento = leitor.GetDateTime(2);
+                    UsuarioLogado.Logradouro = leitor.GetString(3);
+                    UsuarioLogado.Numero = leitor.GetString(4);
+                    if (!leitor.IsDBNull(5))
+                    {
+                        UsuarioLogado.Complemento = leitor.GetString(5);
+                    }
+                    UsuarioLogado.Cidade = leitor.GetString(6);
+                    UsuarioLogado.Estado = leitor.GetString(7);
+                    UsuarioLogado.Cpf = leitor.GetString(8);
+                    UsuarioLogado.Senha = leitor.GetString(9);
+                    UsuarioLogado.Celular = leitor.GetString(10);
+
+
+
+                    //fechando leitor
+                    leitor.Close();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha incorretos!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
 
             // Método static limpacaixa
             // UtiUI.LimpaForm(this);
@@ -75,7 +119,7 @@ namespace PrjtAula01
                 
             }
 
-            Conta MinhaConta = new Conta();
+            ContaPastaClasses MinhaConta = new ContaPastaClasses();
 
             MinhaConta.Status = "ATIVA";
 

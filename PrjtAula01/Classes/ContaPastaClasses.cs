@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PrjtAula01.Classes
 {
-    public class Conta
+    public class ContaPastaClasses
     {
 
         public int IdConta { get; set; }
@@ -25,7 +25,7 @@ namespace PrjtAula01.Classes
 
 
 
-        public Conta()
+        public ContaPastaClasses()
         {
             TotalContas = TotalContas + 1;
             TotalSaldo = TotalSaldo + Saldo;
@@ -34,7 +34,7 @@ namespace PrjtAula01.Classes
 
         }
 
-        public Conta(int idConta, int idCliente, double saldo, string status, double limite,
+        public ContaPastaClasses(int idConta, int idCliente, double saldo, string status, double limite,
                       DateTime dataAbertura, DateTime? dataEncerramento, string? tipoConta)
         {
             IdConta = idConta;

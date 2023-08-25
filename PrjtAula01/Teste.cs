@@ -13,7 +13,7 @@ namespace PrjtAula01
 {
     public partial class Teste : Form
     {
-        Conta minhaConta;
+        ContaPastaClasses minhaConta;
 
         public Teste()
         {
@@ -28,7 +28,7 @@ namespace PrjtAula01
 
             //MessageBox.Show(minhaConta.Saldo.ToString() + " " + minhaConta.Status, "Minha Conta");
 
-            minhaConta = new Conta(2, 0, 1000, "Ativa", 0, DateTime.Now, null, "Corrente");
+            minhaConta = new ContaPastaClasses(2, 0, 1000, "Ativa", 0, DateTime.Now, null, "Corrente");
         }
 
         private void btnDepositar_Click(object sender, EventArgs e)
