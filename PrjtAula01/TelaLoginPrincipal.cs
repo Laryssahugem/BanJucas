@@ -1,7 +1,9 @@
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
+using DTO;
 using PrjtAula01.Classes;
 
 namespace PrjtAula01
@@ -76,7 +78,81 @@ namespace PrjtAula01
 
                     //fechando leitor
                     leitor.Close();
+                    //ler novamente o leitor
+                    leitor = cmd.ExecuteReader();
 
+                    cmd.CommandText = "ps_buscaContasPorIdCorrentista";
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Connection = conexao;
+
+                    //verificar se há linhas retornadas do leitor
+                    if (leitor.HasRows)
+                    {
+                        //repete a leitura e enquanto há linhas segue na estrutura
+                        //de repetição
+                        while (leitor.Read())
+                        {
+                            //cria uma conta na memória
+                            Conta conta = new Conta();
+                            //passa os dados do leitor para a conta na memória - objeto conta
+                            conta.Id = leitor.GetInt32(0);
+                            conta.IdCorrentista = leitor.GetInt32(1);
+                            conta.DataAbertura = leitor.GetDateTime(2);
+                            conta.Saldo = leitor.GetDecimal(4);
+                            conta.StatusConta = leitor.GetString(5);
+                            conta.Senha = leitor.GetString(6);
+
+
+
+                            //adiciona a conta recém criada na memória para a colection de contas
+                            UsuarioLogado.Contas.Add(conta);
+                        }
+                    }
+                    leitor.Close(); //fecha leitor
+                    conexao.Close(); //fecha conexao com BD
+
+
+                    Form telaLogin = Application.OpenForms["TelaLogin"];
+
+                    //acessando o formulário aberto através da variável janelaPrincipal
+                    
+                    MenuStrip menuPrincipal = (MenuStrip)telaLogin.Controls[0];
+
+                    menuPrincipal.Items[0].Visible = true;
+
+                    menuPrincipal.Items[1].Visible = true;
+
+                    menuPrincipal.Items[2].Text = "Logout";
+
+                    // menuPrincipal.Items[3].Visible = true;
+
+                    // menuPrincipal.Items[4].Visible = true;
+
+                    // menuPrincipal.Items[4].Text = UsuarioLogado.NomeCorrentista;
+
+                    // menuPrincipal.Items[5].Visible = true;
+
+                    // menuPrincipal.Items[6].Visible = true;
+
+                    // menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].Id.ToString();
+
+
+
+                        //MessageBox.Show($"Olá,{UsuarioLogado.NomeCorrentista}!\n" +
+
+                       // $"Você foi logado na conta {UsuarioLogado.Contas[0].Id.ToString()}\n" +
+
+                        //$"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
+
+                    //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
+
+                    //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
+
+                    //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
+
+                    this.Close();
 
                 }
                 else
@@ -102,7 +178,7 @@ namespace PrjtAula01
                 
             }
 
-            else if (caixaLogin.Text == "12345678900" && senhaLogin.Text == "123456")
+            else if (caixaLogin.Text == "idCliente" && senhaLogin.Text == "senha")
             {
                 TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
 
@@ -111,6 +187,11 @@ namespace PrjtAula01
 
                 //usando metodo show
                 TelaMenu.Show();
+                ContaPastaClasses MinhaConta = new ContaPastaClasses();
+
+                MinhaConta.Status = "statusConta";
+
+                MessageBox.Show(MinhaConta.Status);
             }
 
             else if (caixaLogin.TextLength < 11 || senhaLogin.TextLength < 6)
@@ -119,11 +200,7 @@ namespace PrjtAula01
                 
             }
 
-            ContaPastaClasses MinhaConta = new ContaPastaClasses();
-
-            MinhaConta.Status = "ATIVA";
-
-            MessageBox.Show(MinhaConta.Status);
+            
 
         }
 

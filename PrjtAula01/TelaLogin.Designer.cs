@@ -36,21 +36,18 @@
             depósitoToolStripMenuItem = new ToolStripMenuItem();
             saqueToolStripMenuItem = new ToolStripMenuItem();
             transferênciaToolStripMenuItem = new ToolStripMenuItem();
-            pagamentosToolStripMenuItem = new ToolStripMenuItem();
-            agendamentosToolStripMenuItem = new ToolStripMenuItem();
-            configuraçõesToolStripMenuItem = new ToolStripMenuItem();
-            alterarDadosToolStripMenuItem = new ToolStripMenuItem();
-            alterarSenhaToolStripMenuItem = new ToolStripMenuItem();
+            tranfereToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, operaçõesToolStripMenuItem, pagamentosToolStripMenuItem, agendamentosToolStripMenuItem, configuraçõesToolStripMenuItem });
+            menuStrip1.GripStyle = ToolStripGripStyle.Visible;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, operaçõesToolStripMenuItem, logoutToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(126, 554);
+            menuStrip1.Size = new Size(1098, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -58,7 +55,7 @@
             // 
             loginToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { logarToolStripMenuItem, cadastrarToolStripMenuItem });
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(113, 19);
+            loginToolStripMenuItem.Size = new Size(50, 20);
             loginToolStripMenuItem.Text = "Entrar";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
@@ -78,62 +75,45 @@
             // 
             // operaçõesToolStripMenuItem
             // 
-            operaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { depósitoToolStripMenuItem, saqueToolStripMenuItem, transferênciaToolStripMenuItem });
+            operaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { depósitoToolStripMenuItem, saqueToolStripMenuItem, transferênciaToolStripMenuItem, tranfereToolStripMenuItem });
             operaçõesToolStripMenuItem.Name = "operaçõesToolStripMenuItem";
-            operaçõesToolStripMenuItem.Size = new Size(113, 19);
+            operaçõesToolStripMenuItem.Size = new Size(75, 20);
             operaçõesToolStripMenuItem.Text = "Operações";
+            operaçõesToolStripMenuItem.Visible = false;
             // 
             // depósitoToolStripMenuItem
             // 
             depósitoToolStripMenuItem.Name = "depósitoToolStripMenuItem";
-            depósitoToolStripMenuItem.Size = new Size(143, 22);
-            depósitoToolStripMenuItem.Text = "Depósito";
+            depósitoToolStripMenuItem.Size = new Size(183, 22);
+            depósitoToolStripMenuItem.Text = "Depósitar";
             depósitoToolStripMenuItem.Click += depósitoToolStripMenuItem_Click;
             // 
             // saqueToolStripMenuItem
             // 
             saqueToolStripMenuItem.Name = "saqueToolStripMenuItem";
-            saqueToolStripMenuItem.Size = new Size(143, 22);
-            saqueToolStripMenuItem.Text = "Saque";
+            saqueToolStripMenuItem.Size = new Size(183, 22);
+            saqueToolStripMenuItem.Text = "Sacar";
             saqueToolStripMenuItem.Click += saqueToolStripMenuItem_Click;
             // 
             // transferênciaToolStripMenuItem
             // 
             transferênciaToolStripMenuItem.Name = "transferênciaToolStripMenuItem";
-            transferênciaToolStripMenuItem.Size = new Size(143, 22);
-            transferênciaToolStripMenuItem.Text = "Transferência";
+            transferênciaToolStripMenuItem.Size = new Size(183, 22);
+            transferênciaToolStripMenuItem.Text = "Agendar Pagamento";
             transferênciaToolStripMenuItem.Click += transferênciaToolStripMenuItem_Click;
             // 
-            // pagamentosToolStripMenuItem
+            // tranfereToolStripMenuItem
             // 
-            pagamentosToolStripMenuItem.Name = "pagamentosToolStripMenuItem";
-            pagamentosToolStripMenuItem.Size = new Size(113, 19);
-            pagamentosToolStripMenuItem.Text = "Pagamentos";
+            tranfereToolStripMenuItem.Name = "tranfereToolStripMenuItem";
+            tranfereToolStripMenuItem.Size = new Size(183, 22);
+            tranfereToolStripMenuItem.Text = "Transferir";
             // 
-            // agendamentosToolStripMenuItem
+            // logoutToolStripMenuItem
             // 
-            agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            agendamentosToolStripMenuItem.Size = new Size(113, 19);
-            agendamentosToolStripMenuItem.Text = "Agendamentos";
-            // 
-            // configuraçõesToolStripMenuItem
-            // 
-            configuraçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarDadosToolStripMenuItem, alterarSenhaToolStripMenuItem });
-            configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            configuraçõesToolStripMenuItem.Size = new Size(113, 19);
-            configuraçõesToolStripMenuItem.Text = "Configurações";
-            // 
-            // alterarDadosToolStripMenuItem
-            // 
-            alterarDadosToolStripMenuItem.Name = "alterarDadosToolStripMenuItem";
-            alterarDadosToolStripMenuItem.Size = new Size(180, 22);
-            alterarDadosToolStripMenuItem.Text = "Alterar Dados";
-            // 
-            // alterarSenhaToolStripMenuItem
-            // 
-            alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            alterarSenhaToolStripMenuItem.Size = new Size(180, 22);
-            alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(38, 20);
+            logoutToolStripMenuItem.Text = "Sair";
+            logoutToolStripMenuItem.Visible = false;
             // 
             // TelaLogin
             // 
@@ -160,12 +140,9 @@
         private ToolStripMenuItem depósitoToolStripMenuItem;
         private ToolStripMenuItem saqueToolStripMenuItem;
         private ToolStripMenuItem transferênciaToolStripMenuItem;
-        private ToolStripMenuItem pagamentosToolStripMenuItem;
-        private ToolStripMenuItem agendamentosToolStripMenuItem;
-        private ToolStripMenuItem configuraçõesToolStripMenuItem;
-        private ToolStripMenuItem alterarDadosToolStripMenuItem;
-        private ToolStripMenuItem alterarSenhaToolStripMenuItem;
         private ToolStripMenuItem logarToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem;
+        private ToolStripMenuItem tranfereToolStripMenuItem;
+        private ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

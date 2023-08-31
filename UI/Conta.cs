@@ -12,7 +12,7 @@ namespace DTO
         public int IdCorrentista { get; set; }
         public DateTime DataAbertura { get; set; }
         public DateTime DataFechamento { get; set; }
-        public double Saldo { get; set; }
+        public decimal Saldo { get; set; }
         public string StatusConta { get; set; }
         public string Senha { get; set; }
     }
