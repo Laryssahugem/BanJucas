@@ -34,9 +34,8 @@
             txtRgCad = new TextBox();
             txtCelCad = new TextBox();
             txtEmailCad = new TextBox();
-            txtDataNascCad = new TextBox();
-            txtRendaCad = new TextBox();
-            txtLogradCad = new TextBox();
+            txtCidade = new TextBox();
+            txtCepCad = new TextBox();
             txtGeneroCad = new TextBox();
             txtConfSenhaCad = new TextBox();
             txtSenhaCad = new TextBox();
@@ -44,10 +43,12 @@
             btVoltarCad = new Button();
             lblinserirCadastro = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtNumeroLogra = new TextBox();
+            txtLogradouro = new TextBox();
+            txtRenda = new TextBox();
+            cBoxEstado = new ComboBox();
+            txtComplemento = new TextBox();
+            dtDatanasc = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -101,35 +102,25 @@
             txtEmailCad.TabIndex = 4;
             txtEmailCad.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtDataNascCad
+            // txtCidade
             // 
-            txtDataNascCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDataNascCad.Location = new Point(12, 230);
-            txtDataNascCad.Name = "txtDataNascCad";
-            txtDataNascCad.PlaceholderText = "Data de Nascimento";
-            txtDataNascCad.Size = new Size(300, 29);
-            txtDataNascCad.TabIndex = 5;
-            txtDataNascCad.TextAlign = HorizontalAlignment.Center;
+            txtCidade.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCidade.Location = new Point(399, 281);
+            txtCidade.Name = "txtCidade";
+            txtCidade.PlaceholderText = "Cidade";
+            txtCidade.Size = new Size(300, 29);
+            txtCidade.TabIndex = 8;
+            txtCidade.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtRendaCad
+            // txtCepCad
             // 
-            txtRendaCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRendaCad.Location = new Point(399, 230);
-            txtRendaCad.Name = "txtRendaCad";
-            txtRendaCad.PlaceholderText = "Cidade";
-            txtRendaCad.Size = new Size(300, 29);
-            txtRendaCad.TabIndex = 8;
-            txtRendaCad.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtLogradCad
-            // 
-            txtLogradCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLogradCad.Location = new Point(399, 64);
-            txtLogradCad.Name = "txtLogradCad";
-            txtLogradCad.PlaceholderText = "Cep";
-            txtLogradCad.Size = new Size(300, 29);
-            txtLogradCad.TabIndex = 7;
-            txtLogradCad.TextAlign = HorizontalAlignment.Center;
+            txtCepCad.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCepCad.Location = new Point(399, 64);
+            txtCepCad.Name = "txtCepCad";
+            txtCepCad.PlaceholderText = "Cep";
+            txtCepCad.Size = new Size(300, 29);
+            txtCepCad.TabIndex = 7;
+            txtCepCad.TextAlign = HorizontalAlignment.Center;
             // 
             // txtGeneroCad
             // 
@@ -171,6 +162,7 @@
             btAcessoCad.TabIndex = 12;
             btAcessoCad.Text = "Criar Acesso";
             btAcessoCad.UseVisualStyleBackColor = false;
+            btAcessoCad.Click += btAcessoCad_Click;
             // 
             // btVoltarCad
             // 
@@ -204,46 +196,63 @@
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtNumeroLogra
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(399, 175);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Número Logradouro";
-            textBox1.Size = new Size(300, 29);
-            textBox1.TabIndex = 19;
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtNumeroLogra.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNumeroLogra.Location = new Point(399, 175);
+            txtNumeroLogra.Name = "txtNumeroLogra";
+            txtNumeroLogra.PlaceholderText = "Número Logradouro";
+            txtNumeroLogra.Size = new Size(300, 29);
+            txtNumeroLogra.TabIndex = 19;
+            txtNumeroLogra.TextAlign = HorizontalAlignment.Center;
+            txtNumeroLogra.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // txtLogradouro
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(399, 117);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Logradouro";
-            textBox2.Size = new Size(300, 29);
-            textBox2.TabIndex = 20;
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            txtLogradouro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtLogradouro.Location = new Point(399, 117);
+            txtLogradouro.Name = "txtLogradouro";
+            txtLogradouro.PlaceholderText = "Logradouro";
+            txtLogradouro.Size = new Size(300, 29);
+            txtLogradouro.TabIndex = 20;
+            txtLogradouro.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtRenda
             // 
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(399, 281);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Estado";
-            textBox3.Size = new Size(300, 29);
-            textBox3.TabIndex = 21;
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            txtRenda.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRenda.Location = new Point(399, 381);
+            txtRenda.Name = "txtRenda";
+            txtRenda.PlaceholderText = "Renda Mensal";
+            txtRenda.Size = new Size(300, 29);
+            txtRenda.TabIndex = 22;
+            txtRenda.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox4
+            // cBoxEstado
             // 
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(399, 328);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Renda Mensal";
-            textBox4.Size = new Size(300, 29);
-            textBox4.TabIndex = 22;
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            cBoxEstado.AutoCompleteCustomSource.AddRange(new string[] { "AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF" });
+            cBoxEstado.FormattingEnabled = true;
+            cBoxEstado.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO", "DF" });
+            cBoxEstado.Location = new Point(399, 328);
+            cBoxEstado.Name = "cBoxEstado";
+            cBoxEstado.Size = new Size(300, 23);
+            cBoxEstado.TabIndex = 23;
+            // 
+            // txtComplemento
+            // 
+            txtComplemento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtComplemento.Location = new Point(399, 230);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.PlaceholderText = "Complemento";
+            txtComplemento.Size = new Size(300, 29);
+            txtComplemento.TabIndex = 24;
+            txtComplemento.TextAlign = HorizontalAlignment.Center;
+            // 
+            // dtDatanasc
+            // 
+            dtDatanasc.Location = new Point(12, 236);
+            dtDatanasc.Name = "dtDatanasc";
+            dtDatanasc.Size = new Size(300, 23);
+            dtDatanasc.TabIndex = 25;
             // 
             // TelaCadastro
             // 
@@ -251,20 +260,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1218, 636);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(dtDatanasc);
+            Controls.Add(txtComplemento);
+            Controls.Add(cBoxEstado);
+            Controls.Add(txtRenda);
+            Controls.Add(txtLogradouro);
+            Controls.Add(txtNumeroLogra);
             Controls.Add(pictureBox1);
             Controls.Add(lblinserirCadastro);
             Controls.Add(btVoltarCad);
             Controls.Add(btAcessoCad);
             Controls.Add(txtConfSenhaCad);
             Controls.Add(txtSenhaCad);
-            Controls.Add(txtRendaCad);
-            Controls.Add(txtLogradCad);
+            Controls.Add(txtCidade);
+            Controls.Add(txtCepCad);
             Controls.Add(txtGeneroCad);
-            Controls.Add(txtDataNascCad);
             Controls.Add(txtEmailCad);
             Controls.Add(txtCelCad);
             Controls.Add(txtRgCad);
@@ -284,9 +294,8 @@
         private TextBox txtRgCad;
         private TextBox txtCelCad;
         private TextBox txtEmailCad;
-        private TextBox txtDataNascCad;
-        private TextBox txtRendaCad;
-        private TextBox txtLogradCad;
+        private TextBox txtCidade;
+        private TextBox txtCepCad;
         private TextBox txtGeneroCad;
         private TextBox txtConfSenhaCad;
         private TextBox txtSenhaCad;
@@ -294,9 +303,11 @@
         private Button btVoltarCad;
         private Label lblinserirCadastro;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtNumeroLogra;
+        private TextBox txtLogradouro;
+        private TextBox txtRenda;
+        private ComboBox cBoxEstado;
+        private TextBox txtComplemento;
+        private DateTimePicker dtDatanasc;
     }
 }

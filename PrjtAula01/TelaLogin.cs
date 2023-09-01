@@ -31,20 +31,7 @@ namespace PrjtAula01
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var telaLogin = new TelaLoginPrincipal();
-
-            // instanciei a classe / criei o objeto
-            TelaCadastro TelaCad = new TelaCadastro();
-
-
-            //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
-            TelaCad.MdiParent = this;
-
-            //usando metodo show
-            TelaCad.Show();
-
-
-
+            
         }
 
         private void depósitoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +58,22 @@ namespace PrjtAula01
         private void logarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCadastro janelaCadastro = new TelaCadastro();
+            janelaCadastro.MdiParent = this;
+            janelaCadastro.Show();
+        }
+
+        private void deposítarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             // instanciei a classe / criei o objeto
             TelaLoginPrincipal TelaLoginPrin = new TelaLoginPrincipal();
 
@@ -79,13 +82,34 @@ namespace PrjtAula01
 
             //usando metodo show
             TelaLoginPrin.Show();
+            if (this.menuStrip1.Items[0].Text == "Logar")
+            {
+                TelaLogin telaLogin = new TelaLogin();
+                telaLogin.MdiParent = this;
+                telaLogin.Show();
+            }
+            else
+            {
+                menuStrip1.Items[0].Text = "Logar";
+                menuStrip1.Items[2].Visible = false;
+                menuStrip1.Items[1].Visible = false;
+                menuStrip1.Items[1].Visible = false;
+            }
         }
 
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            TelaCadastro janelaCadastro = new TelaCadastro();
-            janelaCadastro.MdiParent = this;
-            janelaCadastro.Show();
+            var telaLogin = new TelaLoginPrincipal();
+
+            // instanciei a classe / criei o objeto
+            TelaCadastro TelaCad = new TelaCadastro();
+
+
+            //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
+            TelaCad.MdiParent = this;
+
+            //usando metodo show
+            TelaCad.Show();
         }
     }
 }
