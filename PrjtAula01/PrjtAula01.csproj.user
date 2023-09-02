@@ -7,6 +7,12 @@
     <Compile Update="TelaAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TelaAtualizarDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TelaCadastroConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TelaLoginPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -31,7 +31,7 @@ namespace PrjtAula01
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void depósitoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,6 +110,16 @@ namespace PrjtAula01
 
             //usando metodo show
             TelaCad.Show();
+
+            // instanciei a classe / criei o objeto
+            TeleCadastroConta telaCadastroConta = new TeleCadastroConta();
+
+
+            //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
+            telaCadastroConta.MdiParent = this;
+
+            //usando metodo show
+            telaCadastroConta.Show();
         }
     }
 }

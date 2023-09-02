@@ -160,7 +160,7 @@
             btAcessoCad.Name = "btAcessoCad";
             btAcessoCad.Size = new Size(203, 54);
             btAcessoCad.TabIndex = 12;
-            btAcessoCad.Text = "Criar Acesso";
+            btAcessoCad.Text = "Criar Usuário";
             btAcessoCad.UseVisualStyleBackColor = false;
             btAcessoCad.Click += btAcessoCad_Click;
             // 
@@ -174,6 +174,7 @@
             btVoltarCad.TabIndex = 13;
             btVoltarCad.Text = "Voltar";
             btVoltarCad.UseVisualStyleBackColor = false;
+            btVoltarCad.Click += btVoltarCad_Click;
             // 
             // lblinserirCadastro
             // 
@@ -282,6 +283,7 @@
             Controls.Add(txtNomeCad);
             Name = "TelaCadastro";
             Text = "Tela Cadastro";
+            Load += TelaCadastro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
