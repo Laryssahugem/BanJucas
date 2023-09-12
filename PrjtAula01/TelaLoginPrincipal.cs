@@ -58,21 +58,24 @@ namespace PrjtAula01
                 {
                     leitor.Read();
                     //UtiUI.LimpaForm(this);
-                    MessageBox.Show("Bem Vindo!");
+
                     UsuarioLogado.Id = leitor.GetInt32(0);
                     UsuarioLogado.NomeCorrentista = leitor.GetString(1);
                     UsuarioLogado.DataNascimento = leitor.GetDateTime(2);
-                    UsuarioLogado.Logradouro = leitor.GetString(3);
-                    UsuarioLogado.Numero = leitor.GetString(4);
-                    if (!leitor.IsDBNull(5))
-                    {
-                        UsuarioLogado.Complemento = leitor.GetString(5);
-                    }
+                    UsuarioLogado.Logradouro = leitor.GetString(3);                   
+                    UsuarioLogado.Numero = leitor.GetString(4);                   
+                    UsuarioLogado.Complemento = leitor.GetString(5);
                     UsuarioLogado.Cidade = leitor.GetString(6);
                     UsuarioLogado.Estado = leitor.GetString(7);
                     UsuarioLogado.Cpf = leitor.GetString(8);
-                    UsuarioLogado.Senha = leitor.GetString(9);
-                    UsuarioLogado.Celular = leitor.GetString(10);
+                    UsuarioLogado.Celular = leitor.GetString(9);
+                    UsuarioLogado.Senha = leitor.GetString(10);
+                    UsuarioLogado.Rg = leitor.GetString(11);
+                    UsuarioLogado.Email = leitor.GetString(12);
+                    UsuarioLogado.Cep = leitor.GetString(13);
+                    UsuarioLogado.Genero = leitor.GetString(14);
+                    UsuarioLogado.RendaMensal = leitor.GetDecimal(15);
+
 
 
 
@@ -101,8 +104,8 @@ namespace PrjtAula01
                             conta.IdCorrentista = leitor.GetInt32(1);
                             conta.DataAbertura = leitor.GetDateTime(2);
                             conta.Saldo = leitor.GetDecimal(4);
-                            conta.StatusConta = leitor.GetString(5);
-                            conta.Senha = leitor.GetString(6);
+                            conta.StatusConta = leitor.GetString(6);
+                            conta.Senha = leitor.GetString(8);
 
 
 
@@ -117,7 +120,7 @@ namespace PrjtAula01
                     Form telaLogin = Application.OpenForms["TelaLogin"];
 
                     //acessando o formulário aberto através da variável janelaPrincipal
-                    
+
                     MenuStrip menuPrincipal = (MenuStrip)telaLogin.Controls[0];
 
                     menuPrincipal.Items[0].Visible = true;
@@ -140,13 +143,13 @@ namespace PrjtAula01
 
 
 
-                        //MessageBox.Show($"Olá,{UsuarioLogado.NomeCorrentista}!\n" +
+                    MessageBox.Show($"Olá,{UsuarioLogado.NomeCorrentista}!\n" +
 
-                       // $"Você foi logado na conta {UsuarioLogado.Contas[0].Id.ToString()}\n" +
+                     $"Você foi logado na conta {UsuarioLogado.Contas[0].Id.ToString()}\n" +
 
-                        //$"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
+                    $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
 
-                    //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
+                   // MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
 
                     //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
 
@@ -165,42 +168,8 @@ namespace PrjtAula01
             {
 
                 MessageBox.Show(ex.Message);
+
             }
-
-            // Método static limpacaixa
-            // UtiUI.LimpaForm(this);
-            //código quando o botão ENTRAR for clicado
-
-            if (caixaLogin.Text == String.Empty || senhaLogin.Text == String.Empty)
-            {
-                lblMsgLogin.Text = "Dados não informados!";
-                caixaLogin.Focus();
-                
-            }
-
-            else if (caixaLogin.Text == "idCliente" && senhaLogin.Text == "senha")
-            {
-                TelaLoginPrincipal telaLogin = new TelaLoginPrincipal();
-
-                // instanciei a classe / criei o objeto
-                MenuPrincipal TelaMenu = new MenuPrincipal();
-
-                //usando metodo show
-                TelaMenu.Show();
-                ContaPastaClasses MinhaConta = new ContaPastaClasses();
-
-                MinhaConta.Status = "statusConta";
-
-                MessageBox.Show(MinhaConta.Status);
-            }
-
-            else if (caixaLogin.TextLength < 11 || senhaLogin.TextLength < 6)
-            {
-                lblMsgLogin.Text = "Preencha os dados corretamente";
-                
-            }
-
-            
 
         }
 

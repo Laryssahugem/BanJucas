@@ -36,6 +36,9 @@
             sacarToolStripMenuItem = new ToolStripMenuItem();
             tranferirToolStripMenuItem = new ToolStripMenuItem();
             agendarPagamentoToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            criarContaToolStripMenuItem = new ToolStripMenuItem();
+            alterarToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,7 +68,7 @@
             // 
             // operaçõesToolStripMenuItem1
             // 
-            operaçõesToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { deposítarToolStripMenuItem, sacarToolStripMenuItem, tranferirToolStripMenuItem, agendarPagamentoToolStripMenuItem });
+            operaçõesToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { deposítarToolStripMenuItem, sacarToolStripMenuItem, tranferirToolStripMenuItem, agendarPagamentoToolStripMenuItem, toolStripSeparator1, criarContaToolStripMenuItem, alterarToolStripMenuItem });
             operaçõesToolStripMenuItem1.Enabled = false;
             operaçõesToolStripMenuItem1.Name = "operaçõesToolStripMenuItem1";
             operaçõesToolStripMenuItem1.Size = new Size(75, 20);
@@ -96,6 +99,23 @@
             agendarPagamentoToolStripMenuItem.Size = new Size(183, 22);
             agendarPagamentoToolStripMenuItem.Text = "Agendar Pagamento";
             // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(180, 6);
+            // 
+            // criarContaToolStripMenuItem
+            // 
+            criarContaToolStripMenuItem.Name = "criarContaToolStripMenuItem";
+            criarContaToolStripMenuItem.Size = new Size(183, 22);
+            criarContaToolStripMenuItem.Text = "Criar Conta";
+            // 
+            // alterarToolStripMenuItem
+            // 
+            alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            alterarToolStripMenuItem.Size = new Size(183, 22);
+            alterarToolStripMenuItem.Text = "Alterar";
+            // 
             // TelaLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -123,5 +143,8 @@
         private ToolStripMenuItem sacarToolStripMenuItem;
         private ToolStripMenuItem tranferirToolStripMenuItem;
         private ToolStripMenuItem agendarPagamentoToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem criarContaToolStripMenuItem;
+        private ToolStripMenuItem alterarToolStripMenuItem;
     }
 }

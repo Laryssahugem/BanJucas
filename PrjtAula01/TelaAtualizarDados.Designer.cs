@@ -252,6 +252,7 @@
             txtNomeCad.Size = new Size(300, 29);
             txtNomeCad.TabIndex = 26;
             txtNomeCad.TextAlign = HorizontalAlignment.Center;
+            txtNomeCad.TextChanged += txtNomeCad_TextChanged;
             // 
             // btnLimpar
             // 

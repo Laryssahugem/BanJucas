@@ -22,7 +22,11 @@ namespace PrjtAula01
         public static string? Cpf { get; set; }
         public static string? Celular { get; set; }
         public static string? Senha { get; set; }
-
+        public static string? Rg { get; set; }
+        public static string? Email { get; set; }
+        public static string? Cep { get; set; }
+        public static string? Genero { get; set; }
+        public static decimal? RendaMensal { get; set; }
 
 
         public static List<Conta> Contas = new List<Conta>();
@@ -42,6 +46,11 @@ namespace PrjtAula01
             UsuarioLogado.Cpf = String.Empty;
             UsuarioLogado.Celular = String.Empty;
             UsuarioLogado.Senha = String.Empty;
+            UsuarioLogado.Rg = String.Empty;
+            UsuarioLogado.Email = String.Empty;
+            UsuarioLogado.Cep = String.Empty;
+            UsuarioLogado.Genero = String.Empty;
+            UsuarioLogado.RendaMensal = 0;
             UsuarioLogado.Contas.Clear();
         }
     }

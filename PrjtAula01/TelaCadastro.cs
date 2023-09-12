@@ -83,7 +83,7 @@ namespace PrjtAula01
                     conexao.Open(); // Abrindo a conexão
                     cmd.ExecuteNonQuery(); // executa o comando no Banco de dados
                     conexao.Close();
-                    MessageBox.Show("Correntista cadastrado com sucesso!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Correntista cadastrado com sucesso!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     UtiUI.LimpaForm(this);
                 }
                 else

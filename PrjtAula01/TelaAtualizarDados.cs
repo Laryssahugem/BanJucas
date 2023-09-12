@@ -57,19 +57,34 @@ namespace PrjtAula01
                     cmd.Parameters.AddWithValue("cidade", txtCidade.Text);
                     cmd.Parameters.AddWithValue("estado", cBoxEstado.Text);
                     cmd.Parameters.AddWithValue("renda", txtRenda.Text);
-                    cmd.Parameters.AddWithValue("senha", txtSenhaCad.Text);
+                    cmd.Parameters.AddWithValue("senha", txtSenhaUpdate.Text);
+
+                    conexao.Open(); // Abrindo a conexão
+                    cmd.ExecuteNonQuery(); // executa o comando no Banco de dados
+                    conexao.Close();
+                    MessageBox.Show("Correntista Atualizado com sucesso!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UtiUI.LimpaForm(this);
+                }
+                else
+                {
+                    throw new Exception("Os campos de senha não coincidem!");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             UtiUI.LimpaForm(this);
+        }
+
+        private void txtNomeCad_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
