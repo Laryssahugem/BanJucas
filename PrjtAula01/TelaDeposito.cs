@@ -27,5 +27,21 @@ namespace PrjtAula01
         {
 
         }
+
+        private void btConfirmarDeposito_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //   if (txtValorDeposito.Text == String.Empty || txtValorDeposito.Text == )
+            //    {
+
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+            //    throw;
+            //}
+        }
     }
 }

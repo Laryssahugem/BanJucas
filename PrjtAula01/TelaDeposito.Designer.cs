@@ -152,6 +152,7 @@
             btConfirmarDeposito.TabIndex = 6;
             btConfirmarDeposito.Text = "Confirmar depósito";
             btConfirmarDeposito.UseVisualStyleBackColor = false;
+            btConfirmarDeposito.Click += btConfirmarDeposito_Click;
             // 
             // lblVoltarDeposito
             // 
@@ -170,7 +171,7 @@
             lblDepositoConfirmado.AutoSize = true;
             lblDepositoConfirmado.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             lblDepositoConfirmado.ForeColor = Color.White;
-            lblDepositoConfirmado.Location = new Point(863, 414);
+            lblDepositoConfirmado.Location = new Point(866, 425);
             lblDepositoConfirmado.Name = "lblDepositoConfirmado";
             lblDepositoConfirmado.Size = new Size(249, 37);
             lblDepositoConfirmado.TabIndex = 24;

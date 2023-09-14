@@ -54,7 +54,7 @@ namespace PrjtAula01
 
                     //inserindo parâmetros à procedure
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("iiCliente", conta.IdCorrentista);
+                    cmd.Parameters.AddWithValue("iCliente", conta.IdCorrentista);
                     cmd.Parameters.AddWithValue("dataAbertura", conta.DataAbertura);
                     cmd.Parameters.AddWithValue("Limite", conta.Limite);
                     cmd.Parameters.AddWithValue("saldo", conta.Saldo);

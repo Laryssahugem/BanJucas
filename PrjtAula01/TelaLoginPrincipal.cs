@@ -59,24 +59,23 @@ namespace PrjtAula01
                     leitor.Read();
                     //UtiUI.LimpaForm(this);
 
+
                     UsuarioLogado.Id = leitor.GetInt32(0);
                     UsuarioLogado.NomeCorrentista = leitor.GetString(1);
-                    UsuarioLogado.DataNascimento = leitor.GetDateTime(2);
-                    UsuarioLogado.Logradouro = leitor.GetString(3);                   
-                    UsuarioLogado.Numero = leitor.GetString(4);                   
-                    UsuarioLogado.Complemento = leitor.GetString(5);
-                    UsuarioLogado.Cidade = leitor.GetString(6);
-                    UsuarioLogado.Estado = leitor.GetString(7);
-                    UsuarioLogado.Cpf = leitor.GetString(8);
-                    UsuarioLogado.Celular = leitor.GetString(9);
-                    UsuarioLogado.Senha = leitor.GetString(10);
-                    UsuarioLogado.Rg = leitor.GetString(11);
-                    UsuarioLogado.Email = leitor.GetString(12);
-                    UsuarioLogado.Cep = leitor.GetString(13);
-                    UsuarioLogado.Genero = leitor.GetString(14);
-                    UsuarioLogado.RendaMensal = leitor.GetDecimal(15);
-
-
+                    UsuarioLogado.Cpf = leitor.GetString(2);
+                    UsuarioLogado.Rg = leitor.GetString(3);
+                    UsuarioLogado.DataNascimento = leitor.GetDateTime(4);
+                    UsuarioLogado.Genero = leitor.GetString(5);
+                    UsuarioLogado.Celular = leitor.GetString(6);
+                    UsuarioLogado.Cep = leitor.GetString(7);
+                    UsuarioLogado.Logradouro = leitor.GetString(8);
+                    UsuarioLogado.Numero = leitor.GetString(9);
+                    UsuarioLogado.Complemento = leitor.GetString(10);
+                    UsuarioLogado.Cidade = leitor.GetString(11);
+                    UsuarioLogado.Estado = leitor.GetString(12);
+                    UsuarioLogado.RendaMensal = leitor.GetDecimal(13);
+                    UsuarioLogado.Email = leitor.GetString(14);
+                    UsuarioLogado.Senha = leitor.GetString(15);
 
 
                     //fechando leitor
@@ -102,10 +101,15 @@ namespace PrjtAula01
                             //passa os dados do leitor para a conta na memória - objeto conta
                             conta.Id = leitor.GetInt32(0);
                             conta.IdCorrentista = leitor.GetInt32(1);
-                            conta.DataAbertura = leitor.GetDateTime(2);
-                            conta.Saldo = leitor.GetDecimal(4);
+                            conta.Saldo = leitor.GetDecimal(2);
+                            if (!leitor.IsDBNull(3))
+                            {
+                                conta.Limite = leitor.GetDecimal(3);
+                            }
+                            conta.TipoConta = leitor.GetString(4);
+                            conta.DataAbertura = leitor.GetDateTime(5);
                             conta.StatusConta = leitor.GetString(6);
-                            conta.Senha = leitor.GetString(8);
+                            conta.Senha = leitor.GetString(7);
 
 
 
@@ -123,11 +127,13 @@ namespace PrjtAula01
 
                     MenuStrip menuPrincipal = (MenuStrip)telaLogin.Controls[0];
 
-                    menuPrincipal.Items[0].Visible = true;
+                    menuPrincipal.Items[0].Text = "Logout";
 
                     menuPrincipal.Items[1].Visible = true;
 
-                    menuPrincipal.Items[2].Text = "Logout";
+                    menuPrincipal.Items[2].Visible = true;
+
+                    menuPrincipal.Items[3].Visible = true;
 
                     // menuPrincipal.Items[3].Visible = true;
 
@@ -149,7 +155,7 @@ namespace PrjtAula01
 
                     $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
 
-                   // MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
+                    // MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
 
                     //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
 

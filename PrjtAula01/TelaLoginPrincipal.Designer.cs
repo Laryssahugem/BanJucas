@@ -36,7 +36,6 @@
             Senha = new Label();
             Mensagem = new Label();
             pictureBox1 = new PictureBox();
-            criarCadastro = new Button();
             esquecerSenha = new Button();
             lblMsgLogin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -129,24 +128,12 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // criarCadastro
-            // 
-            criarCadastro.BackColor = Color.FromArgb(82, 143, 235);
-            criarCadastro.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            criarCadastro.Location = new Point(903, 381);
-            criarCadastro.Name = "criarCadastro";
-            criarCadastro.Size = new Size(195, 46);
-            criarCadastro.TabIndex = 7;
-            criarCadastro.Text = "Criar minha conta BJ";
-            criarCadastro.UseVisualStyleBackColor = false;
-            criarCadastro.Click += criarCadastro_Click;
-            // 
             // esquecerSenha
             // 
             esquecerSenha.BackColor = Color.FromArgb(82, 143, 235);
             esquecerSenha.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             esquecerSenha.ForeColor = Color.White;
-            esquecerSenha.Location = new Point(903, 443);
+            esquecerSenha.Location = new Point(903, 393);
             esquecerSenha.Name = "esquecerSenha";
             esquecerSenha.Size = new Size(195, 44);
             esquecerSenha.TabIndex = 8;
@@ -171,7 +158,6 @@
             ClientSize = new Size(1218, 633);
             Controls.Add(lblMsgLogin);
             Controls.Add(esquecerSenha);
-            Controls.Add(criarCadastro);
             Controls.Add(pictureBox1);
             Controls.Add(Mensagem);
             Controls.Add(Senha);
@@ -197,7 +183,6 @@
         private Label Senha;
         private Label Mensagem;
         private PictureBox pictureBox1;
-        private Button criarCadastro;
         private Button esquecerSenha;
         private Label lblMsgLogin;
     }

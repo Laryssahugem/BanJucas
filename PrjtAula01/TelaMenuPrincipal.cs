@@ -11,9 +11,9 @@ using PrjtAula01.Classes;
 
 namespace PrjtAula01
 {
-    public partial class TelaLogin : Form
+    public partial class TelaMenuPrincipal : Form
     {
-        public TelaLogin()
+        public TelaMenuPrincipal()
         {
             InitializeComponent();
 
@@ -86,7 +86,7 @@ namespace PrjtAula01
                 TelaLoginPrin.Show();
                 if (this.menuStrip1.Items[0].Text == "Logar")
                 {
-                    TelaLogin telaLogin = new TelaLogin();
+                    TelaMenuPrincipal telaLogin = new TelaMenuPrincipal();
                     TelaLoginPrin.MdiParent = this;
                     TelaLoginPrin.Show();
                 }
@@ -97,14 +97,14 @@ namespace PrjtAula01
                     menuStrip1.Items[1].Visible = false;
                     menuStrip1.Items[1].Visible = false;
                 }
-               
+
             }
             catch (Exception)
             {
 
                 throw;
             }
-            
+
         }
 
         private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -121,6 +121,21 @@ namespace PrjtAula01
             //usando metodo show
             TelaCad.Show();
 
+
+        }
+
+        private void operaçõesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sacarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void criarContaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             // instanciei a classe / criei o objeto
             TeleCadastroConta telaCadastroConta = new TeleCadastroConta();
 
@@ -130,6 +145,11 @@ namespace PrjtAula01
 
             //usando metodo show
             telaCadastroConta.Show();
+        }
+
+        private void criarContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
