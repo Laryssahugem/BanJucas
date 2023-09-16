@@ -49,7 +49,18 @@
             cBoxEstado = new ComboBox();
             txtComplemento = new TextBox();
             dtDatanasc = new DateTimePicker();
+            panel1 = new Panel();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
+            button1 = new Button();
+            btCriaConta = new Button();
+            txtConfSenhaConta = new TextBox();
+            txtSenhaConta = new TextBox();
+            txtDepositoInicial = new TextBox();
+            lblDepositoinicial = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtNomeCad
@@ -255,12 +266,115 @@
             dtDatanasc.Size = new Size(300, 23);
             dtDatanasc.TabIndex = 25;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btCriaConta);
+            panel1.Controls.Add(txtConfSenhaConta);
+            panel1.Controls.Add(txtSenhaConta);
+            panel1.Controls.Add(txtDepositoInicial);
+            panel1.Controls.Add(lblDepositoinicial);
+            panel1.Location = new Point(1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1205, 633);
+            panel1.TabIndex = 26;
+            panel1.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(845, 109);
+            label1.Name = "label1";
+            label1.Size = new Size(212, 37);
+            label1.TabIndex = 54;
+            label1.Text = "Insira sua Senha:";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(492, 281);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(166, 150);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 53;
+            pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(900, 428);
+            button1.Name = "button1";
+            button1.Size = new Size(203, 54);
+            button1.TabIndex = 52;
+            button1.Text = "Voltar";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // btCriaConta
+            // 
+            btCriaConta.BackColor = Color.White;
+            btCriaConta.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btCriaConta.Location = new Point(900, 330);
+            btCriaConta.Name = "btCriaConta";
+            btCriaConta.Size = new Size(203, 54);
+            btCriaConta.TabIndex = 51;
+            btCriaConta.Text = "Criar Conta";
+            btCriaConta.UseVisualStyleBackColor = false;
+            btCriaConta.Click += btCriaConta_Click;
+            // 
+            // txtConfSenhaConta
+            // 
+            txtConfSenhaConta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtConfSenhaConta.Location = new Point(845, 242);
+            txtConfSenhaConta.Name = "txtConfSenhaConta";
+            txtConfSenhaConta.PlaceholderText = "Confirme sua senha";
+            txtConfSenhaConta.Size = new Size(318, 33);
+            txtConfSenhaConta.TabIndex = 50;
+            txtConfSenhaConta.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtSenhaConta
+            // 
+            txtSenhaConta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSenhaConta.Location = new Point(845, 189);
+            txtSenhaConta.Name = "txtSenhaConta";
+            txtSenhaConta.PlaceholderText = "Crie sua senha";
+            txtSenhaConta.Size = new Size(318, 33);
+            txtSenhaConta.TabIndex = 49;
+            txtSenhaConta.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtDepositoInicial
+            // 
+            txtDepositoInicial.BackColor = Color.White;
+            txtDepositoInicial.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDepositoInicial.Location = new Point(45, 221);
+            txtDepositoInicial.Name = "txtDepositoInicial";
+            txtDepositoInicial.PlaceholderText = "R$ 0,00";
+            txtDepositoInicial.Size = new Size(318, 43);
+            txtDepositoInicial.TabIndex = 48;
+            txtDepositoInicial.TextAlign = HorizontalAlignment.Center;
+            // 
+            // lblDepositoinicial
+            // 
+            lblDepositoinicial.AutoSize = true;
+            lblDepositoinicial.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDepositoinicial.ForeColor = Color.White;
+            lblDepositoinicial.Location = new Point(45, 135);
+            lblDepositoinicial.Name = "lblDepositoinicial";
+            lblDepositoinicial.Size = new Size(318, 37);
+            lblDepositoinicial.TabIndex = 47;
+            lblDepositoinicial.Text = "Insira seu Depósito Inicial";
+            // 
             // TelaCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1218, 636);
+            Controls.Add(panel1);
             Controls.Add(dtDatanasc);
             Controls.Add(txtComplemento);
             Controls.Add(cBoxEstado);
@@ -285,6 +399,9 @@
             Text = "Tela Cadastro";
             Load += TelaCadastro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -311,5 +428,14 @@
         private ComboBox cBoxEstado;
         private TextBox txtComplemento;
         private DateTimePicker dtDatanasc;
+        private Panel panel1;
+        private Label label1;
+        private PictureBox pictureBox2;
+        private Button button1;
+        private Button btCriaConta;
+        private TextBox txtConfSenhaConta;
+        private TextBox txtSenhaConta;
+        private TextBox txtDepositoInicial;
+        private Label lblDepositoinicial;
     }
 }

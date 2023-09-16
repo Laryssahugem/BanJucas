@@ -30,27 +30,31 @@
         {
             menuStrip1 = new MenuStrip();
             logarToolStripMenuItem1 = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem = new ToolStripMenuItem();
-            criarContaToolStripMenuItem1 = new ToolStripMenuItem();
+            cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
+            contaToolStripMenuItem = new ToolStripMenuItem();
+            alternaContaToolStripMenuItem = new ToolStripMenuItem();
+            alterarDadosToolStripMenuItem = new ToolStripMenuItem();
+            alterarSenhaToolStripMenuItem = new ToolStripMenuItem();
+            operaçõesToolStripMenuItem = new ToolStripMenuItem();
+            tranToolStripMenuItem = new ToolStripMenuItem();
+            depósitoToolStripMenuItem = new ToolStripMenuItem();
+            saqueToolStripMenuItem = new ToolStripMenuItem();
+            agendamentoToolStripMenuItem = new ToolStripMenuItem();
             criarContaToolStripMenuItem = new ToolStripMenuItem();
             alterarToolStripMenuItem = new ToolStripMenuItem();
-            operaçõesToolStripMenuItem = new ToolStripMenuItem();
-            depósitarToolStripMenuItem = new ToolStripMenuItem();
-            sacarToolStripMenuItem1 = new ToolStripMenuItem();
-            tranferirToolStripMenuItem1 = new ToolStripMenuItem();
-            agendarPagamentoToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.GripStyle = ToolStripGripStyle.Visible;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { logarToolStripMenuItem1, cadastrarToolStripMenuItem, criarContaToolStripMenuItem1, operaçõesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { logarToolStripMenuItem1, cadastrarToolStripMenuItem1, contaToolStripMenuItem, operaçõesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1098, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // logarToolStripMenuItem1
             // 
@@ -59,64 +63,79 @@
             logarToolStripMenuItem1.Text = "Logar";
             logarToolStripMenuItem1.Click += logarToolStripMenuItem1_Click;
             // 
-            // cadastrarToolStripMenuItem
+            // cadastrarToolStripMenuItem1
             // 
-            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(69, 20);
-            cadastrarToolStripMenuItem.Text = "Cadastrar";
-            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click_1;
+            cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
+            cadastrarToolStripMenuItem1.Size = new Size(69, 20);
+            cadastrarToolStripMenuItem1.Text = "Cadastrar";
+            cadastrarToolStripMenuItem1.Click += cadastrarToolStripMenuItem1_Click;
             // 
-            // criarContaToolStripMenuItem1
+            // contaToolStripMenuItem
             // 
-            criarContaToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { criarContaToolStripMenuItem, alterarToolStripMenuItem });
-            criarContaToolStripMenuItem1.Name = "criarContaToolStripMenuItem1";
-            criarContaToolStripMenuItem1.Size = new Size(51, 20);
-            criarContaToolStripMenuItem1.Text = "Conta";
-            criarContaToolStripMenuItem1.Click += criarContaToolStripMenuItem1_Click;
+            contaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alternaContaToolStripMenuItem, alterarDadosToolStripMenuItem, alterarSenhaToolStripMenuItem });
+            contaToolStripMenuItem.Name = "contaToolStripMenuItem";
+            contaToolStripMenuItem.Size = new Size(51, 20);
+            contaToolStripMenuItem.Text = "Conta";
+            // 
+            // alternaContaToolStripMenuItem
+            // 
+            alternaContaToolStripMenuItem.Name = "alternaContaToolStripMenuItem";
+            alternaContaToolStripMenuItem.Size = new Size(151, 22);
+            alternaContaToolStripMenuItem.Text = "Alternar Conta";
+            // 
+            // alterarDadosToolStripMenuItem
+            // 
+            alterarDadosToolStripMenuItem.Name = "alterarDadosToolStripMenuItem";
+            alterarDadosToolStripMenuItem.Size = new Size(151, 22);
+            alterarDadosToolStripMenuItem.Text = "Alterar Dados";
+            // 
+            // alterarSenhaToolStripMenuItem
+            // 
+            alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
+            alterarSenhaToolStripMenuItem.Size = new Size(151, 22);
+            alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
+            // 
+            // operaçõesToolStripMenuItem
+            // 
+            operaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tranToolStripMenuItem, depósitoToolStripMenuItem, saqueToolStripMenuItem, agendamentoToolStripMenuItem });
+            operaçõesToolStripMenuItem.Name = "operaçõesToolStripMenuItem";
+            operaçõesToolStripMenuItem.Size = new Size(75, 20);
+            operaçõesToolStripMenuItem.Text = "Operações";
+            // 
+            // tranToolStripMenuItem
+            // 
+            tranToolStripMenuItem.Name = "tranToolStripMenuItem";
+            tranToolStripMenuItem.Size = new Size(150, 22);
+            tranToolStripMenuItem.Text = "Transferência";
+            // 
+            // depósitoToolStripMenuItem
+            // 
+            depósitoToolStripMenuItem.Name = "depósitoToolStripMenuItem";
+            depósitoToolStripMenuItem.Size = new Size(150, 22);
+            depósitoToolStripMenuItem.Text = "Depósito";
+            // 
+            // saqueToolStripMenuItem
+            // 
+            saqueToolStripMenuItem.Name = "saqueToolStripMenuItem";
+            saqueToolStripMenuItem.Size = new Size(150, 22);
+            saqueToolStripMenuItem.Text = "Saque";
+            // 
+            // agendamentoToolStripMenuItem
+            // 
+            agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
+            agendamentoToolStripMenuItem.Size = new Size(150, 22);
+            agendamentoToolStripMenuItem.Text = "Agendamento";
             // 
             // criarContaToolStripMenuItem
             // 
             criarContaToolStripMenuItem.Name = "criarContaToolStripMenuItem";
-            criarContaToolStripMenuItem.Size = new Size(134, 22);
-            criarContaToolStripMenuItem.Text = "Criar Conta";
-            criarContaToolStripMenuItem.Click += criarContaToolStripMenuItem_Click;
+            criarContaToolStripMenuItem.Size = new Size(32, 19);
             // 
             // alterarToolStripMenuItem
             // 
             alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
             alterarToolStripMenuItem.Size = new Size(134, 22);
             alterarToolStripMenuItem.Text = "Alterar";
-            // 
-            // operaçõesToolStripMenuItem
-            // 
-            operaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { depósitarToolStripMenuItem, sacarToolStripMenuItem1, tranferirToolStripMenuItem1, agendarPagamentoToolStripMenuItem1 });
-            operaçõesToolStripMenuItem.Name = "operaçõesToolStripMenuItem";
-            operaçõesToolStripMenuItem.Size = new Size(75, 20);
-            operaçõesToolStripMenuItem.Text = "Operações";
-            // 
-            // depósitarToolStripMenuItem
-            // 
-            depósitarToolStripMenuItem.Name = "depósitarToolStripMenuItem";
-            depósitarToolStripMenuItem.Size = new Size(183, 22);
-            depósitarToolStripMenuItem.Text = "Depósitar";
-            // 
-            // sacarToolStripMenuItem1
-            // 
-            sacarToolStripMenuItem1.Name = "sacarToolStripMenuItem1";
-            sacarToolStripMenuItem1.Size = new Size(183, 22);
-            sacarToolStripMenuItem1.Text = "Sacar";
-            // 
-            // tranferirToolStripMenuItem1
-            // 
-            tranferirToolStripMenuItem1.Name = "tranferirToolStripMenuItem1";
-            tranferirToolStripMenuItem1.Size = new Size(183, 22);
-            tranferirToolStripMenuItem1.Text = "Tranferir";
-            // 
-            // agendarPagamentoToolStripMenuItem1
-            // 
-            agendarPagamentoToolStripMenuItem1.Name = "agendarPagamentoToolStripMenuItem1";
-            agendarPagamentoToolStripMenuItem1.Size = new Size(183, 22);
-            agendarPagamentoToolStripMenuItem1.Text = "Agendar Pagamento";
             // 
             // TelaMenuPrincipal
             // 
@@ -128,7 +147,6 @@
             MainMenuStrip = menuStrip1;
             Name = "TelaMenuPrincipal";
             Text = "Menu Principal";
-            Load += TelaLogin_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -139,14 +157,17 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem logarToolStripMenuItem1;
-        private ToolStripMenuItem cadastrarToolStripMenuItem;
-        private ToolStripMenuItem criarContaToolStripMenuItem1;
-        private ToolStripMenuItem operaçõesToolStripMenuItem;
-        private ToolStripMenuItem depósitarToolStripMenuItem;
         private ToolStripMenuItem criarContaToolStripMenuItem;
         private ToolStripMenuItem alterarToolStripMenuItem;
-        private ToolStripMenuItem sacarToolStripMenuItem1;
-        private ToolStripMenuItem tranferirToolStripMenuItem1;
-        private ToolStripMenuItem agendarPagamentoToolStripMenuItem1;
+        private ToolStripMenuItem cadastrarToolStripMenuItem1;
+        private ToolStripMenuItem contaToolStripMenuItem;
+        private ToolStripMenuItem alternaContaToolStripMenuItem;
+        private ToolStripMenuItem operaçõesToolStripMenuItem;
+        private ToolStripMenuItem tranToolStripMenuItem;
+        private ToolStripMenuItem alterarDadosToolStripMenuItem;
+        private ToolStripMenuItem alterarSenhaToolStripMenuItem;
+        private ToolStripMenuItem depósitoToolStripMenuItem;
+        private ToolStripMenuItem saqueToolStripMenuItem;
+        private ToolStripMenuItem agendamentoToolStripMenuItem;
     }
 }

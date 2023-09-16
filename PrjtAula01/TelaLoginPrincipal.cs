@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
 using DTO;
 using PrjtAula01.Classes;
 
@@ -80,36 +81,44 @@ namespace PrjtAula01
 
                     //fechando leitor
                     leitor.Close();
-                    //ler novamente o leitor
-                    leitor = cmd.ExecuteReader();
-
+                
                     cmd.CommandText = "ps_buscaContasPorIdCorrentista";
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Connection = conexao;
 
+
+                    //passando os parâmetros necessários
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("idCliente", UsuarioLogado.Id);
+
+                    //ler novamente o leitor
+                    leitor = cmd.ExecuteReader();
+
                     //verificar se há linhas retornadas do leitor
                     if (leitor.HasRows)
                     {
+                 
                         //repete a leitura e enquanto há linhas segue na estrutura
                         //de repetição
                         while (leitor.Read())
                         {
-                            //cria uma conta na memória
-                            Conta conta = new Conta();
-                            //passa os dados do leitor para a conta na memória - objeto conta
-                            conta.Id = leitor.GetInt32(0);
-                            conta.IdCorrentista = leitor.GetInt32(1);
-                            conta.Saldo = leitor.GetDecimal(2);
-                            if (!leitor.IsDBNull(3))
-                            {
+                              //cria uma conta na memória
+                              Conta conta = new Conta();
+                               
+                              //passa os dados do leitor para a conta na memória - objeto conta
+                              conta.Id = leitor.GetInt32(0);
+                              conta.IdCorrentista = leitor.GetInt32(1);
+                              conta.Saldo = leitor.GetDecimal(2); 
+                              if (!leitor.IsDBNull(3))
+                              {
                                 conta.Limite = leitor.GetDecimal(3);
-                            }
-                            conta.TipoConta = leitor.GetString(4);
-                            conta.DataAbertura = leitor.GetDateTime(5);
-                            conta.StatusConta = leitor.GetString(6);
-                            conta.Senha = leitor.GetString(7);
+                              }
+                              conta.TipoConta = leitor.GetString(4);
+                              conta.DataAbertura = leitor.GetDateTime(5);
+                              conta.StatusConta = leitor.GetString(6);
+                              conta.Senha = leitor.GetString(7);
 
 
 
@@ -121,11 +130,11 @@ namespace PrjtAula01
                     conexao.Close(); //fecha conexao com BD
 
 
-                    Form telaLogin = Application.OpenForms["TelaLogin"];
+                    Form telaMenuPrincipal = Application.OpenForms["TelaMenuPrincipal"];
 
                     //acessando o formulário aberto através da variável janelaPrincipal
 
-                    MenuStrip menuPrincipal = (MenuStrip)telaLogin.Controls[0];
+                    MenuStrip menuPrincipal = (MenuStrip)telaMenuPrincipal.Controls[0];
 
                     menuPrincipal.Items[0].Text = "Logout";
 
@@ -134,10 +143,6 @@ namespace PrjtAula01
                     menuPrincipal.Items[2].Visible = true;
 
                     menuPrincipal.Items[3].Visible = true;
-
-                    // menuPrincipal.Items[3].Visible = true;
-
-                    // menuPrincipal.Items[4].Visible = true;
 
                     // menuPrincipal.Items[4].Text = UsuarioLogado.NomeCorrentista;
 
@@ -184,25 +189,6 @@ namespace PrjtAula01
 
         }
 
-        private void criarCadastro_Click(object sender, EventArgs e)
-        {
-            // instanciei a classe / criei o objeto
-            TelaCadastro TelaLogin = new TelaCadastro();
-
-            //usando metodo show
-            TelaLogin.Show();
-
-        }
-
-        private void caixaLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void TelaLoginPrincipal_Load(object sender, EventArgs e)
         {

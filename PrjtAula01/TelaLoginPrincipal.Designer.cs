@@ -53,7 +53,6 @@
             caixaLogin.Size = new Size(195, 36);
             caixaLogin.TabIndex = 0;
             caixaLogin.TextAlign = HorizontalAlignment.Center;
-            caixaLogin.TextChanged += caixaLogin_TextChanged;
             // 
             // senhaLogin
             // 
@@ -139,16 +138,6 @@
             esquecerSenha.TabIndex = 8;
             esquecerSenha.Text = "Esqueci minha senha";
             esquecerSenha.UseVisualStyleBackColor = false;
-            // 
-            // lblMsgLogin
-            // 
-            lblMsgLogin.AutoSize = true;
-            lblMsgLogin.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMsgLogin.Location = new Point(846, 92);
-            lblMsgLogin.Name = "lblMsgLogin";
-            lblMsgLogin.Size = new Size(0, 37);
-            lblMsgLogin.TabIndex = 9;
-            lblMsgLogin.Click += label1_Click;
             // 
             // TelaLoginPrincipal
             // 

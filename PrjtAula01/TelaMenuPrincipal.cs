@@ -19,59 +19,16 @@ namespace PrjtAula01
 
         }
 
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            menuStrip1.Items[0].Text = "Logar";
 
+            menuStrip1.Items[1].Visible = true;
+
+            menuStrip1.Items[2].Visible = false;
+
+            menuStrip1.Items[3].Visible = false;
         }
-
-        private void TelaLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void depósitoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TelaDeposito janelaDeposito = new TelaDeposito();
-            janelaDeposito.MdiParent = this;
-            janelaDeposito.Show();
-        }
-
-        private void saqueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TelaSaque janelaSaque = new TelaSaque();
-            janelaSaque.MdiParent = this;
-            janelaSaque.Show();
-        }
-
-        private void transferênciaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TelaTransferencia janelaTransferencia = new TelaTransferencia();
-            janelaTransferencia.MdiParent = this;
-            janelaTransferencia.Show();
-        }
-
-        private void logarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TelaCadastro janelaCadastro = new TelaCadastro();
-            janelaCadastro.MdiParent = this;
-            janelaCadastro.Show();
-        }
-
-        private void deposítarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
@@ -93,9 +50,10 @@ namespace PrjtAula01
                 else
                 {
                     menuStrip1.Items[0].Text = "Logar";
+                    menuStrip1.Items[1].Visible = true;
                     menuStrip1.Items[2].Visible = false;
-                    menuStrip1.Items[1].Visible = false;
-                    menuStrip1.Items[1].Visible = false;
+                    menuStrip1.Items[3].Visible = false;
+
                 }
 
             }
@@ -107,49 +65,11 @@ namespace PrjtAula01
 
         }
 
-        private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var telaLogin = new TelaLoginPrincipal();
-
-            // instanciei a classe / criei o objeto
-            TelaCadastro TelaCad = new TelaCadastro();
-
-
-            //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
-            TelaCad.MdiParent = this;
-
-            //usando metodo show
-            TelaCad.Show();
-
-
-        }
-
-        private void operaçõesToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sacarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void criarContaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            // instanciei a classe / criei o objeto
-            TeleCadastroConta telaCadastroConta = new TeleCadastroConta();
-
-
-            //definindo a janela "pai" para o form TelaLogin, ou seja, obrigando a tela criada a ser aberta dentro do Form principal
-            telaCadastroConta.MdiParent = this;
-
-            //usando metodo show
-            telaCadastroConta.Show();
-        }
-
-        private void criarContaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            TelaCadastro telaCadastro = new TelaCadastro();
+            telaCadastro.MdiParent = this;
+            telaCadastro.Show();
         }
     }
 }
