@@ -81,7 +81,7 @@ namespace PrjtAula01
 
                     //fechando leitor
                     leitor.Close();
-                
+
                     cmd.CommandText = "ps_buscaContasPorIdCorrentista";
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -99,26 +99,26 @@ namespace PrjtAula01
                     //verificar se há linhas retornadas do leitor
                     if (leitor.HasRows)
                     {
-                 
+
                         //repete a leitura e enquanto há linhas segue na estrutura
                         //de repetição
                         while (leitor.Read())
                         {
-                              //cria uma conta na memória
-                              Conta conta = new Conta();
-                               
-                              //passa os dados do leitor para a conta na memória - objeto conta
-                              conta.Id = leitor.GetInt32(0);
-                              conta.IdCorrentista = leitor.GetInt32(1);
-                              conta.Saldo = leitor.GetDecimal(2); 
-                              if (!leitor.IsDBNull(3))
-                              {
+                            //cria uma conta na memória
+                            Conta conta = new Conta();
+
+                            //passa os dados do leitor para a conta na memória - objeto conta
+                            conta.Id = leitor.GetInt32(0);
+                            conta.IdCorrentista = leitor.GetInt32(1);
+                            conta.Saldo = leitor.GetDecimal(2);
+                            if (!leitor.IsDBNull(3))
+                            {
                                 conta.Limite = leitor.GetDecimal(3);
-                              }
-                              conta.TipoConta = leitor.GetString(4);
-                              conta.DataAbertura = leitor.GetDateTime(5);
-                              conta.StatusConta = leitor.GetString(6);
-                              conta.Senha = leitor.GetString(7);
+                            }
+                            conta.TipoConta = leitor.GetString(4);
+                            conta.DataAbertura = leitor.GetDateTime(5);
+                            conta.StatusConta = leitor.GetString(6);
+                            conta.Senha = leitor.GetString(7);
 
 
 

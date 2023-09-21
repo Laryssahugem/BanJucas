@@ -80,20 +80,23 @@
             // alternaContaToolStripMenuItem
             // 
             alternaContaToolStripMenuItem.Name = "alternaContaToolStripMenuItem";
-            alternaContaToolStripMenuItem.Size = new Size(151, 22);
+            alternaContaToolStripMenuItem.Size = new Size(180, 22);
             alternaContaToolStripMenuItem.Text = "Alternar Conta";
+            alternaContaToolStripMenuItem.Click += alternaContaToolStripMenuItem_Click;
             // 
             // alterarDadosToolStripMenuItem
             // 
             alterarDadosToolStripMenuItem.Name = "alterarDadosToolStripMenuItem";
-            alterarDadosToolStripMenuItem.Size = new Size(151, 22);
+            alterarDadosToolStripMenuItem.Size = new Size(180, 22);
             alterarDadosToolStripMenuItem.Text = "Alterar Dados";
+            alterarDadosToolStripMenuItem.Click += alterarDadosToolStripMenuItem_Click;
             // 
             // alterarSenhaToolStripMenuItem
             // 
             alterarSenhaToolStripMenuItem.Name = "alterarSenhaToolStripMenuItem";
-            alterarSenhaToolStripMenuItem.Size = new Size(151, 22);
+            alterarSenhaToolStripMenuItem.Size = new Size(180, 22);
             alterarSenhaToolStripMenuItem.Text = "Alterar Senha";
+            alterarSenhaToolStripMenuItem.Click += alterarSenhaToolStripMenuItem_Click;
             // 
             // operaçõesToolStripMenuItem
             // 
@@ -105,26 +108,30 @@
             // tranToolStripMenuItem
             // 
             tranToolStripMenuItem.Name = "tranToolStripMenuItem";
-            tranToolStripMenuItem.Size = new Size(150, 22);
+            tranToolStripMenuItem.Size = new Size(180, 22);
             tranToolStripMenuItem.Text = "Transferência";
+            tranToolStripMenuItem.Click += tranToolStripMenuItem_Click;
             // 
             // depósitoToolStripMenuItem
             // 
             depósitoToolStripMenuItem.Name = "depósitoToolStripMenuItem";
-            depósitoToolStripMenuItem.Size = new Size(150, 22);
+            depósitoToolStripMenuItem.Size = new Size(180, 22);
             depósitoToolStripMenuItem.Text = "Depósito";
+            depósitoToolStripMenuItem.Click += depósitoToolStripMenuItem_Click;
             // 
             // saqueToolStripMenuItem
             // 
             saqueToolStripMenuItem.Name = "saqueToolStripMenuItem";
-            saqueToolStripMenuItem.Size = new Size(150, 22);
+            saqueToolStripMenuItem.Size = new Size(180, 22);
             saqueToolStripMenuItem.Text = "Saque";
+            saqueToolStripMenuItem.Click += saqueToolStripMenuItem_Click;
             // 
             // agendamentoToolStripMenuItem
             // 
             agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
-            agendamentoToolStripMenuItem.Size = new Size(150, 22);
+            agendamentoToolStripMenuItem.Size = new Size(180, 22);
             agendamentoToolStripMenuItem.Text = "Agendamento";
+            agendamentoToolStripMenuItem.Click += agendamentoToolStripMenuItem_Click;
             // 
             // criarContaToolStripMenuItem
             // 
@@ -147,6 +154,7 @@
             MainMenuStrip = menuStrip1;
             Name = "TelaMenuPrincipal";
             Text = "Menu Principal";
+            Load += TelaMenuPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

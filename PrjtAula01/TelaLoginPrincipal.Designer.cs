@@ -37,7 +37,6 @@
             Mensagem = new Label();
             pictureBox1 = new PictureBox();
             esquecerSenha = new Button();
-            lblMsgLogin = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -145,7 +144,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(82, 143, 235);
             ClientSize = new Size(1218, 633);
-            Controls.Add(lblMsgLogin);
             Controls.Add(esquecerSenha);
             Controls.Add(pictureBox1);
             Controls.Add(Mensagem);
@@ -173,6 +171,5 @@
         private Label Mensagem;
         private PictureBox pictureBox1;
         private Button esquecerSenha;
-        private Label lblMsgLogin;
     }
 }

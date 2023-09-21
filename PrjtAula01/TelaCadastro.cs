@@ -116,34 +116,9 @@ namespace PrjtAula01
         {
             try
             {
-                //Criando uma conexão
-                SqlConnection conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["Prjt Aula01.Properties.Settings.strConexao"].ToString());
+                
 
-                //Criando um comando
-                SqlCommand cmd = new SqlCommand();
-
-                //criando texto do comando, tipo e conexão que será usada
-                cmd.CommandText = "pi_Conta";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = conexao;
-
-                //inserindo parâmetros à procedure
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("iCliente", conta.IdCorrentista);
-                cmd.Parameters.AddWithValue("dataAbertura", conta.DataAbertura);
-                cmd.Parameters.AddWithValue("Limite", conta.Limite);
-                cmd.Parameters.AddWithValue("saldo", conta.Saldo);
-                cmd.Parameters.AddWithValue("statusConta", conta.StatusConta);
-                cmd.Parameters.AddWithValue("TipoConta", conta.TipoConta);
-                cmd.Parameters.AddWithValue("senha", conta.Senha);
-
-                //abrir a conexão
-                conexao.Open();
-
-                //executa o comando no BD e captura o retorno devolvido pelo procedimento
-                conta.Id = Convert.ToInt32(cmd.ExecuteScalar());
-
-                MessageBox.Show(conta.Id.ToString());
+               
                 if (txtSenhaConta.Text == txtConfSenhaConta.Text)
                 {
 
@@ -155,8 +130,36 @@ namespace PrjtAula01
                     conta.TipoConta = "Corrente";
                     conta.Senha = txtSenhaConta.Text;
 
+                    //Criando uma conexão
 
+                    SqlConnection conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["PrjtAula01.Properties.Settings.strConexao"].ToString());
 
+                    //Criando um comando
+                    SqlCommand cmd = new SqlCommand();
+
+                    //criando texto do comando, tipo e conexão que será usada
+                    cmd.CommandText = "pi_Conta";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conexao;
+
+                    //inserindo parâmetros à procedure
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("iCliente", conta.IdCorrentista);
+                    cmd.Parameters.AddWithValue("dataAbertura", conta.DataAbertura);
+                    cmd.Parameters.AddWithValue("Limite", conta.Limite);
+                    cmd.Parameters.AddWithValue("saldo", conta.Saldo);
+                    cmd.Parameters.AddWithValue("statusConta", conta.StatusConta);
+                    cmd.Parameters.AddWithValue("TipoConta", conta.TipoConta);
+                    cmd.Parameters.AddWithValue("senha", conta.Senha);
+
+                    //abrir a conexão
+                    conexao.Open();
+
+                    //executa o comando no BD e captura o retorno devolvido pelo procedimento
+
+                    conta.Id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    MessageBox.Show(conta.Id.ToString());
                     conexao.Close();
                     MessageBox.Show("Conta criada com sucesso!!!", "Info",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);

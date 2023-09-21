@@ -21,13 +21,7 @@ namespace PrjtAula01
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            menuStrip1.Items[0].Text = "Logar";
 
-            menuStrip1.Items[1].Visible = true;
-
-            menuStrip1.Items[2].Visible = false;
-
-            menuStrip1.Items[3].Visible = false;
         }
         private void logarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -51,8 +45,8 @@ namespace PrjtAula01
                 {
                     menuStrip1.Items[0].Text = "Logar";
                     menuStrip1.Items[1].Visible = true;
-                    menuStrip1.Items[2].Visible = false;
-                    menuStrip1.Items[3].Visible = false;
+                    menuStrip1.Items[2].Visible = true;
+                    menuStrip1.Items[3].Visible = true;
 
                 }
 
@@ -70,6 +64,64 @@ namespace PrjtAula01
             TelaCadastro telaCadastro = new TelaCadastro();
             telaCadastro.MdiParent = this;
             telaCadastro.Show();
+        }
+
+        private void TelaMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            menuStrip1.Items[0].Text = "Logar";
+
+            menuStrip1.Items[1].Visible = true;
+
+            menuStrip1.Items[2].Visible = false;
+
+            menuStrip1.Items[3].Visible = false;
+        }
+
+        private void alterarDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaAtualizarDados telaAtualizarDados = new TelaAtualizarDados();
+            telaAtualizarDados.MdiParent = this;
+            telaAtualizarDados.Show();
+        }
+
+        private void tranToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaTransferencia telaTransferencia = new TelaTransferencia();
+            telaTransferencia.MdiParent = this;
+            telaTransferencia.Show();
+        }
+
+        private void depósitoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaDeposito telaDeposito = new TelaDeposito();
+            telaDeposito.MdiParent = this;
+            telaDeposito.Show();
+        }
+
+        private void alterarSenhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaAlterarSenha telaAlterarSenha = new TelaAlterarSenha();
+            telaAlterarSenha.MdiParent = this;
+            telaAlterarSenha.Show();
+        }
+
+        private void saqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaSaque telaSaque = new TelaSaque();
+            telaSaque.MdiParent = this;
+            telaSaque.Show();
+        }
+
+        private void agendamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaAgendamento telaAgendamento = new TelaAgendamento();
+            telaAgendamento.MdiParent = this;
+            telaAgendamento.Show();
+        }
+
+        private void alternaContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

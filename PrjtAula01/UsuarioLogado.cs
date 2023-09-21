@@ -27,6 +27,7 @@ namespace PrjtAula01
         public static string? Cep { get; set; }
         public static string? Genero { get; set; }
         public static decimal? RendaMensal { get; set; }
+        public static int ContaLogada { get; set; }
 
 
         public static List<Conta> Contas = new List<Conta>();
